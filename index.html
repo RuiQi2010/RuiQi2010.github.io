@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>一百遍</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <section>
+            <div class="main">
+                <div class="left">
+                    <h1>
+                        你已经写完<span id="score">0</span>遍名字
+                    </h1>
+                    <button onclick="increment()">
+                        再写<span id="clickpower">1</span>遍
+                    </button>
+                </div>
+                <div class="right">
+                    <div id="upgrade-container">
+                        <div id="pen" class="upgrade" onclick="buy(0, incrementClickPower)">
+                            <div class="left-section">
+                                <h4>黑笔</h4>
+                                <div class="cost-info">
+                                    <p>价格: <span id="pen-cost">100</span>遍名字</p>
+                                </div>
+                            </div>
+                            <div class="right-section">
+                                <span id="pens">0</span>支
+                            </div>
+                        </div>
+                        <div id="ming" class="upgrade" onclick="buy(1)">
+                            <div class="left-section">
+                                <h4>小明</h4>
+                                <div class="cost-info">
+                                    <p>价格: <span id="ming-cost">1000</span>遍名字</p>
+                                </div>
+                            </div>
+                            <div class="right-section">
+                                <span id="mings">0</span>个
+                            </div>
+                        </div>
+                        <div id="liang" class="upgrade" onclick="buy(2)">
+                            <div class="left-section">
+                                <h4>小亮</h4>
+                                <div class="cost-info">
+                                    <p>价格: <span id="liang-cost">10000</span>遍名字</p>
+                                </div>
+                            </div>
+                            <div class="right-section">
+                                <span id="liangs">0</span>个
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>
