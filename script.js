@@ -1,9 +1,9 @@
 let score = document.querySelector('#score');
 let clickpower = document.querySelector('#clickpower');
 
-var identifiers = ["pen", "ming", "liang"];
-var mprs = [1.1, 1.2, 1.3];
-var powers = [0, 5, 100];
+var identifiers = ["pen", "ming", "liang", "lihua"];
+var mprs = [1.1, 1.2, 1.3, 1.4];
+var powers = [0, 5, 100, 2000];
 
 function incrementClickPower() {
     clickpower.innerHTML = hval(clickpower) + 1;
