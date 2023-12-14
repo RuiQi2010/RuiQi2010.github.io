@@ -48,7 +48,7 @@ function buy(index, handler=function() {}) {
 }
 
 function buyCotton() {
-    buyGeneric("c", 1.583);
+    buyGeneric("c", 1.716);
 }
 
 function checkUpgradableRaw(i) {
@@ -74,6 +74,6 @@ setInterval(function() {
     checkUpgradableRaw("c");
     for (let i = 0; i < mprs.length; i++) {
         checkUpgradable(i);
-        if (hval(hget(i.toString() + "s")) && i) increment(powers[i] * hval(hget(i.toString() + "s")));
+        if (hval(hget(i.toString() + "s")) && i) increment(powers[i] * hval(hget(i.toString() + "s")) * (hval(hget("cs")) + 1));
     }
-}, 50); 
+}, 50);
