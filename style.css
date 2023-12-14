@@ -1,17 +1,61 @@
-body {
-    background-color: black;
+html {
     display: grid;
-    place-items: center;
+    background-color: black;
+}
+
+body {
+    display: contents;
+    place-self: center;
     height: 100vh;
     margin: 0;
     padding: 0;
     user-select: none;
 }
 
-.main {
-    color: white;
+div {
+    display: contents;
+}
+
+.upgrade div {
     display: flex;
-    gap: 200px;
+    justify-content: center;
+}
+
+content {
+    display: grid;
+    place-items: center;
+}
+
+h1 {
+    color: white;
+    margin: 10px;
+    place-self: center;
+}
+
+.menu {
+    place-self: center;
+    place-items: center;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.menu button {
+    background-color: black;
+    color: white;
+    font-size: large;
+    border-radius: 2px;
+    border: 3px solid white;
+}
+
+#cs {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold; 
+}
+
+.content {
+    display: grid;
+    color: white;
+    place-self: center;
 }
 
 #score {
@@ -25,13 +69,16 @@ body {
 }
 
 .upgrade .right-section span {
+    font-size: 50px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 }
 
 .upgrade {
+    background-color: #222222;
     display: flex;
-    align-items: center;
+    margin: 5px;
+    place-items: center left;
     justify-content: space-between;
     width: 330px;
     height: 60px;
@@ -43,27 +90,19 @@ body {
 .upgrade.upgradable:hover {
     border: 4px solid green;
     color: greenyellow;
+    background-color: darkslategray;
     transition: 200ms;
 }
 
 .upgrade:hover {
     border: 4px solid red;
     color: salmon;
+    background-color: rgb(79, 47, 47);
     transition: 200ms;
-}
-
-.left h1 {
-    text-align: center;
-    font-size: 30px;
-}
-
-.left button {
-    text-align: center;
 }
 
 .left-section h4 {
     margin: 0;
-    margin-bottom: 20px;
     font-size: 20px;
 }
 
@@ -73,6 +112,10 @@ body {
 
 .cost-info {
     display: flex;
-    align-items: center;
     gap: 5px;
+    margin-left: 50px;
+}
+
+.inactive {
+    display: none;
 }
