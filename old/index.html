@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>一百遍</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>
+            你已经写完<span id="score">0</span>遍名字
+        </h1>
+        <div class="menu">
+            <button onclick="increment()">
+                再写<span id="clickpower">1</span>遍
+            </button>
+            <button>
+                <a href="../index.html">2.0.0</a>
+            </button>
+            <button class="inactive" id="menu-base" onclick="switchThing('base')">名字</button>
+            <button class="inactive" id="menu-cotton" onclick="switchThing('cotton')">棉花</button>
+        </div>
+        <section class="content">
+            <div id="base" class="inactive">
+                <div id="0" class="upgrade" onclick="buy(0, incrementClickPower)">
+                    <div class="left-section">
+                        <h4>黑笔</h4>
+                        <div class="cost-info">
+                            <p>价格: <span id="0c">100</span>遍名字</p>
+                        </div>
+                    </div>
+                    <div class="right-section">
+                        ^<span id="0s">0</span>
+                    </div>
+                </div>
+                <div id="1" class="upgrade" onclick="buy(1)">
+                    <div class="left-section">
+                        <h4>小明</h4>
+                        <div class="cost-info">
+                            <p>价格: <span id="1c">1000</span>遍名字</p>
+                        </div>
+                    </div>
+                    <div class="right-section">
+                        ^<span id="1s">0</span>
+                    </div>
+                </div>
+                <div id="2" class="upgrade" onclick="buy(2)">
+                    <div class="left-section">
+                        <h4>小亮</h4>
+                        <div class="cost-info">
+                            <p>价格: <span id="2c">10000</span>遍名字</p>
+                        </div>
+                    </div>
+                    <div class="right-section">
+                        ^<span id="2s">0</span>
+                    </div>
+                </div>
+                <div id="3" class="upgrade" onclick="buy(3)">
+                    <div class="left-section">
+                        <h4>李华</h4>
+                        <div class="cost-info">
+                            <p>价格: <span id="3c">100000</span>遍名字</p>
+                        </div>
+                    </div>
+                    <div class="right-section">
+                        ^<span id="3s">0</span>
+                    </div>
+                </div>
+            </div>
+            <div id="cotton" class="inactive">
+                <h1>
+                    你拥有<span id="cs">0</span>棉花
+                </h1>
+                <div id="c" class="upgrade" onclick="buyCotton()">
+                    <div class="left-section">
+                        <h4>棉花</h4>
+                        <div class="cost-info">
+                            <p>价格: <span id="cc">330000</span>遍名字</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>

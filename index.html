@@ -1,83 +1,58 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>一百遍</title>
-        <link href="style.css" rel="stylesheet">
-    </head>
-    <body>
-        <h1>
-            你已经写完<span id="score">0</span>遍名字
-        </h1>
-        <div class="menu">
-            <button onclick="increment()">
-                再写<span id="clickpower">1</span>遍
-            </button>
-            <button class="inactive" id="menu-base" onclick="switchThing('base')">名字</button>
-            <button class="inactive" id="menu-cotton" onclick="switchThing('cotton')">棉花</button>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一百遍 | 新时代版</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section>
+        <div class="main">
+            <div class="left">
+                <h3>名字<br /><span class="score imp">5000</span></h3>
+                <img src="./assets/plusone.png" alt="" srcset="" class="img-main" onclick="incrementScore()" draggable="false">
+            </div>
+
+            <script id="template" type="text/template">
+                <div class="upgrade type-{{type}}" onclick="buyUpgrade('{{internalName}}')" id="{{internalName}}-upgrade">
+                    <div class="left-section">
+                        <img src="{{img}}" alt="" srcset="" class="img-upgrade" />
+                    </div>
+                    <div class="mid-section">
+                        <h4>{{name}}</h4>
+                        <p class="cost-info">价格: <span class="{{internalName}}-cost">{{cost}}</span>遍名字</p>
+                    </div>
+                    <div class="right-section"><span class="{{internalName}}-level">0</span>级</div>
+                    <div class="next-level-info" id="{{internalName}}-next-level">
+                        +<span class="{{internalName}}-increase">{{increase}}</span>名字/点击
+                    </div>
+                </div>
+            </script>
+
+            <div class="right">
+                <div class="right-navbar">
+                    <div id="upgrades-nav-button">名字</div>
+                    <div id="skills-nav-button">技能</div>
+                </div>
+                <div id="upgrade-container"></div>
+            </div>
         </div>
-        <section class="content">
-            <div id="base" class="inactive">
-                <div id="0" class="upgrade" onclick="buy(0, incrementClickPower)">
-                    <div class="left-section">
-                        <h4>黑笔</h4>
-                        <div class="cost-info">
-                            <p>价格: <span id="0c">100</span>遍名字</p>
-                        </div>
-                    </div>
-                    <div class="right-section">
-                        ^<span id="0s">0</span>
-                    </div>
-                </div>
-                <div id="1" class="upgrade" onclick="buy(1)">
-                    <div class="left-section">
-                        <h4>小明</h4>
-                        <div class="cost-info">
-                            <p>价格: <span id="1c">1000</span>遍名字</p>
-                        </div>
-                    </div>
-                    <div class="right-section">
-                        ^<span id="1s">0</span>
-                    </div>
-                </div>
-                <div id="2" class="upgrade" onclick="buy(2)">
-                    <div class="left-section">
-                        <h4>小亮</h4>
-                        <div class="cost-info">
-                            <p>价格: <span id="2c">10000</span>遍名字</p>
-                        </div>
-                    </div>
-                    <div class="right-section">
-                        ^<span id="2s">0</span>
-                    </div>
-                </div>
-                <div id="3" class="upgrade" onclick="buy(3)">
-                    <div class="left-section">
-                        <h4>李华</h4>
-                        <div class="cost-info">
-                            <p>价格: <span id="3c">100000</span>遍名字</p>
-                        </div>
-                    </div>
-                    <div class="right-section">
-                        ^<span id="3s">0</span>
-                    </div>
-                </div>
+        <div class="statistics">
+            <div class="texts">
+                <p>点击力量: <span id="spc-text" class="imp">1</span></p>
+                <p>自动产生: <span id="sps-text" class="imp">0</span>/s</p>
             </div>
-            <div id="cotton" class="inactive">
-                <h1>
-                    你拥有<span id="cs">0</span>棉花
-                </h1>
-                <div id="c" class="upgrade" onclick="buyCotton()">
-                    <div class="left-section">
-                        <h4>棉花</h4>
-                        <div class="cost-info">
-                            <p>价格: <span id="cc">330000</span>遍名字</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <script src="script.js"></script>
-    </body>
+        </div>
+        <div class="util-buttons">
+            <button class="util-button" onclick="save()">保存</button>
+            <button class="util-button" onclick="load()">加载</button>
+            <button class="util-button">
+                <a href="old/index.html">1.4.0</a>
+            </button>
+        </div>
+    </section>
+    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./src/skills.js"></script>
+</body>
 </html>
